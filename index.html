@@ -4,29 +4,913 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daehee Kim</title>
+
+    <title>Daehee Kim | Economics</title>
+
+    <style>
+
+        /* =========================================================
+           COLOR & BASIC SETTINGS
+        ========================================================= */
+
+        :root {
+            --navy: #0B1F3A;
+            --navy-light: #173F6D;
+            --navy-soft: #315B84;
+
+            --text: #20252B;
+            --gray: #66717C;
+
+            --light-bg: #F3F6FA;
+            --border: #DCE3EA;
+
+            --white: #FFFFFF;
+
+            --max-width: 1000px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            color: var(--text);
+            background-color: var(--white);
+
+            line-height: 1.65;
+        }
+
+        a {
+            color: var(--navy-light);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--navy);
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+
+            padding-left: 28px;
+            padding-right: 28px;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+
+            background-color: var(--navy);
+
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+
+            padding: 17px 28px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-name {
+            color: var(--white);
+
+            font-size: 19px;
+            font-weight: 650;
+
+            letter-spacing: 0.2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #E8EEF5;
+
+            font-size: 14px;
+            font-weight: 450;
+
+            text-decoration: none;
+        }
+
+        .nav-links a:hover {
+            color: var(--white);
+        }
+
+
+        /* =========================================================
+           INTRO
+        ========================================================= */
+
+        .intro-background {
+            background-color: var(--light-bg);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .intro {
+            max-width: var(--max-width);
+            margin: 0 auto;
+
+            padding:
+                85px
+                28px
+                80px
+                28px;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(0, 1fr)
+                220px;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .intro h1 {
+            margin: 0 0 8px 0;
+
+            font-size: 46px;
+            line-height: 1.15;
+
+            letter-spacing: -1.3px;
+
+            color: var(--navy);
+        }
+
+        .position {
+            margin: 0 0 24px 0;
+
+            font-size: 19px;
+            color: var(--navy-soft);
+
+            font-weight: 500;
+        }
+
+        .intro-text {
+            max-width: 650px;
+
+            font-size: 16.5px;
+
+            margin-bottom: 0;
+        }
+
+        .intro-text strong {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        .profile-photo {
+            width: 210px;
+            height: 210px;
+
+            object-fit: cover;
+
+            border-radius: 4px;
+
+            border: 1px solid #CBD4DE;
+
+            background-color: #E4E9EF;
+        }
+
+
+        /* =========================================================
+           PROFILE LINKS
+        ========================================================= */
+
+        .intro-links {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-top: 30px;
+        }
+
+        .intro-links a {
+            display: inline-block;
+
+            padding: 7px 14px;
+
+            border: 1px solid var(--navy-light);
+            border-radius: 3px;
+
+            font-size: 14px;
+            font-weight: 550;
+
+            color: var(--navy-light);
+            background-color: transparent;
+
+            text-decoration: none;
+
+            transition:
+                background-color 0.15s ease,
+                color 0.15s ease;
+        }
+
+        .intro-links a:hover {
+            background-color: var(--navy);
+            color: var(--white);
+        }
+
+
+        /* =========================================================
+           SECTIONS
+        ========================================================= */
+
+        section {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        section + section {
+            border-top: 1px solid var(--border);
+        }
+
+        section h2 {
+            margin-top: 0;
+            margin-bottom: 40px;
+
+            font-size: 28px;
+
+            color: var(--navy);
+
+            letter-spacing: -0.5px;
+        }
+
+        section h2::after {
+            content: "";
+
+            display: block;
+
+            width: 42px;
+            height: 3px;
+
+            margin-top: 11px;
+
+            background-color: var(--navy-light);
+        }
+
+        section h3 {
+            margin-top: 42px;
+            margin-bottom: 25px;
+
+            font-size: 18px;
+
+            color: var(--navy);
+
+            font-weight: 650;
+        }
+
+
+        /* =========================================================
+           RESEARCH
+        ========================================================= */
+
+        .paper {
+            margin-bottom: 42px;
+
+            padding-left: 18px;
+
+            border-left: 3px solid #D4DEE8;
+        }
+
+        .paper:hover {
+            border-left-color: var(--navy-light);
+        }
+
+        .paper-title {
+            margin-bottom: 4px;
+
+            font-size: 18px;
+            font-weight: 650;
+
+            color: var(--navy);
+        }
+
+        .paper-status {
+            margin-bottom: 7px;
+
+            font-size: 13px;
+
+            color: var(--navy-soft);
+
+            text-transform: uppercase;
+
+            letter-spacing: 0.5px;
+
+            font-weight: 600;
+        }
+
+        .paper-authors {
+            margin-bottom: 9px;
+
+            font-size: 14.5px;
+
+            color: var(--gray);
+        }
+
+        .paper-description {
+            max-width: 820px;
+
+            margin-top: 8px;
+            margin-bottom: 12px;
+
+            font-size: 15.5px;
+        }
+
+        .paper-links {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 16px;
+
+            font-size: 14px;
+        }
+
+        .paper-links a {
+            font-weight: 600;
+        }
+
+
+        /* =========================================================
+           TEACHING
+        ========================================================= */
+
+        .teaching-item {
+            margin-bottom: 27px;
+        }
+
+        .course-name {
+            font-size: 16px;
+
+            font-weight: 650;
+
+            color: var(--navy);
+        }
+
+        .course-info {
+            margin-top: 2px;
+
+            font-size: 14.5px;
+
+            color: var(--gray);
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns: 120px 1fr;
+
+            row-gap: 15px;
+
+            max-width: 700px;
+        }
+
+        .contact-label {
+            color: var(--navy);
+
+            font-weight: 650;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background-color: var(--navy);
+
+            color: #BFCBDA;
+
+            font-size: 13px;
+        }
+
+        .footer-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+
+            padding: 30px 28px;
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 750px) {
+
+            .nav-container {
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 18px;
+
+                flex-wrap: wrap;
+            }
+
+            .intro {
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+
+                padding-top: 55px;
+                padding-bottom: 55px;
+            }
+
+            .intro h1 {
+                font-size: 38px;
+            }
+
+            .profile-photo {
+                grid-row: 1;
+
+                width: 175px;
+                height: 175px;
+            }
+
+            section {
+                padding-top: 55px;
+                padding-bottom: 55px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+
+                row-gap: 4px;
+            }
+
+            .contact-label {
+                margin-top: 12px;
+            }
+
+        }
+
+    </style>
 </head>
+
+
 
 <body>
 
-    <h1>Daehee Kim</h1>
 
-    <p>PhD Candidate in Economics</p>
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
-    <h2>Research Interests</h2>
-    <p>
-        Urban Economics, Spatial Economics,
-        Labor Economics, and Public Economics
-    </p>
+<nav>
 
-    <h2>Research</h2>
-    <p>Working papers will be available here.</p>
+    <div class="nav-container">
 
-    <h2>CV</h2>
-    <p>CV coming soon.</p>
+        <div class="nav-name">
+            Daehee Kim
+        </div>
 
-    <h2>Contact</h2>
-    <p>Email: your-email@example.com</p>
+        <div class="nav-links">
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#research">
+                Research
+            </a>
+
+            <a href="#teaching">
+                Teaching
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<div
+    class="intro-background"
+    id="about"
+>
+
+    <div class="intro">
+
+        <div>
+
+            <h1>
+                Daehee Kim
+            </h1>
+
+            <p class="position">
+                PhD Candidate in Economics
+            </p>
+
+
+            <p class="intro-text">
+
+                I am a PhD candidate in Economics at
+                <strong>Your University</strong>.
+
+                My research interests are in
+                <strong>Urban Economics</strong>,
+                <strong>Spatial Economics</strong>,
+                <strong>Labor Economics</strong>,
+                and
+                <strong>Public Economics</strong>.
+
+            </p>
+
+
+            <div class="intro-links">
+
+                <a
+                    href="cv.pdf"
+                    target="_blank"
+                >
+                    CV
+                </a>
+
+
+                <a
+                    href="https://scholar.google.com/"
+                    target="_blank"
+                >
+                    Google Scholar
+                </a>
+
+
+                <a
+                    href="https://github.com/daeheekimecon"
+                    target="_blank"
+                >
+                    GitHub
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <img
+                src="profile.jpg"
+                alt="Daehee Kim"
+                class="profile-photo"
+            >
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<main class="container">
+
+
+<!-- =========================================================
+     RESEARCH
+========================================================= -->
+
+<section id="research">
+
+    <h2>
+        Research
+    </h2>
+
+
+    <h3>
+        Working Papers
+    </h3>
+
+
+    <!-- =========================
+         PAPER 1
+    ========================== -->
+
+    <div class="paper">
+
+        <div class="paper-title">
+
+            The Five-Day Workweek
+            and Residential Location
+
+        </div>
+
+
+        <div class="paper-status">
+            Working Paper
+        </div>
+
+
+        <div class="paper-authors">
+            Daehee Kim
+        </div>
+
+
+        <p class="paper-description">
+
+            This paper studies how reductions in commuting
+            frequency affect workers' residential location
+            decisions using the staggered introduction of
+            Korea's five-day workweek.
+
+        </p>
+
+
+        <div class="paper-links">
+
+            <a
+                href="papers/five_day_workweek.pdf"
+                target="_blank"
+            >
+                Paper
+            </a>
+
+
+            <a
+                href="slides/five_day_workweek_slides.pdf"
+                target="_blank"
+            >
+                Slides
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         PAPER 2
+    ========================== -->
+
+    <div class="paper">
+
+        <div class="paper-title">
+
+            Urban-Rural Wage Differences
+            across the Wage Distribution
+
+        </div>
+
+
+        <div class="paper-status">
+            Working Paper
+        </div>
+
+
+        <div class="paper-authors">
+            Daehee Kim
+        </div>
+
+
+        <p class="paper-description">
+
+            This project examines heterogeneity in the
+            urban wage premium across the unconditional
+            wage distribution and decomposes the gap into
+            composition and structural components.
+
+        </p>
+
+
+        <div class="paper-links">
+
+            <a
+                href="#"
+                target="_blank"
+            >
+                Draft
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         WORK IN PROGRESS
+    ========================== -->
+
+    <h3>
+        Work in Progress
+    </h3>
+
+
+    <div class="paper">
+
+        <div class="paper-title">
+
+            Commercial Gentrification
+            and Granular Firms
+
+        </div>
+
+
+        <div class="paper-status">
+            Work in Progress
+        </div>
+
+
+        <p class="paper-description">
+
+            This project studies how granular firms may
+            amplify local commercial decline and generate
+            persistent adjustments in rents, vacancies,
+            and foot traffic.
+
+        </p>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     TEACHING
+========================================================= -->
+
+<section id="teaching">
+
+    <h2>
+        Teaching
+    </h2>
+
+
+    <div class="teaching-item">
+
+        <div class="course-name">
+            Principles of Economics
+        </div>
+
+        <div class="course-info">
+            Teaching Assistant,
+            Your University
+        </div>
+
+    </div>
+
+
+    <div class="teaching-item">
+
+        <div class="course-name">
+            Urban Economics
+        </div>
+
+        <div class="course-info">
+            Teaching Assistant,
+            Your University
+        </div>
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section id="contact">
+
+    <h2>
+        Contact
+    </h2>
+
+
+    <div class="contact-grid">
+
+
+        <div class="contact-label">
+            Email
+        </div>
+
+        <div>
+
+            <a
+                href="mailto:your-email@university.edu"
+            >
+                your-email@university.edu
+            </a>
+
+        </div>
+
+
+
+        <div class="contact-label">
+            Office
+        </div>
+
+        <div>
+
+            Department of Economics
+            <br>
+
+            Your University
+
+        </div>
+
+
+
+        <div class="contact-label">
+            GitHub
+        </div>
+
+        <div>
+
+            <a
+                href="https://github.com/daeheekimecon"
+                target="_blank"
+            >
+                github.com/daeheekimecon
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        © 2026 Daehee Kim
+
+        <br>
+
+        Last updated September 2026.
+
+    </div>
+
+</footer>
+
 
 </body>
 
