@@ -5,28 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description"
+          content="Daehee Kim - Master's Student in Economics at Sogang University. Research in Urban Economics, Labor Economics, and Applied Microeconometrics.">
+
     <title>Daehee Kim | Economics</title>
 
     <style>
 
-        /* =========================================================
-           COLOR & BASIC SETTINGS
-        ========================================================= */
+        /* =====================================================
+           1. BASIC SETTINGS
+        ===================================================== */
 
         :root {
-            --navy: #0B1F3A;
-            --navy-light: #173F6D;
-            --navy-soft: #315B84;
+            --navy: #142D4E;
+            --navy-mid: #365B7D;
+            --navy-light: #6685A3;
 
-            --text: #20252B;
-            --gray: #66717C;
+            --text: #30343A;
+            --secondary: #606B76;
+            --muted: #79838D;
 
-            --light-bg: #F3F6FA;
-            --border: #DCE3EA;
+            --border: #E2E7EC;
+            --paper-border: #D5DEE7;
 
-            --white: #FFFFFF;
+            --background: #FFFFFF;
+            --subtle-background: #F7F9FB;
 
-            --max-width: 1000px;
+            --max-width: 920px;
         }
 
         * {
@@ -49,20 +54,29 @@
                 Arial,
                 sans-serif;
 
-            color: var(--text);
-            background-color: var(--white);
+            font-size: 15.5px;
+            line-height: 1.7;
 
-            line-height: 1.65;
+            color: var(--text);
+            background: var(--background);
         }
 
         a {
-            color: var(--navy-light);
+            color: var(--navy-mid);
             text-decoration: none;
+
+            transition: color 0.18s ease;
         }
 
         a:hover {
             color: var(--navy);
             text-decoration: underline;
+        }
+
+        a:focus-visible,
+        summary:focus-visible {
+            outline: 2px solid var(--navy-mid);
+            outline-offset: 4px;
         }
 
         .container {
@@ -74,17 +88,18 @@
         }
 
 
-        /* =========================================================
-           NAVIGATION
-        ========================================================= */
+        /* =====================================================
+           2. NAVIGATION
+        ===================================================== */
 
-        nav {
+        .site-header {
             position: sticky;
             top: 0;
+            z-index: 100;
 
-            background-color: var(--navy);
+            background: rgba(255, 255, 255, 0.97);
 
-            z-index: 1000;
+            border-bottom: 1px solid var(--border);
         }
 
         .nav-container {
@@ -94,296 +109,232 @@
             padding: 17px 28px;
 
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+
+            gap: 24px;
         }
 
         .nav-name {
-            color: var(--white);
+            font-size: 18px;
+            font-weight: 700;
 
-            font-size: 19px;
-            font-weight: 650;
+            color: var(--navy);
+            letter-spacing: -0.3px;
+        }
 
-            letter-spacing: 0.2px;
+        .nav-name:hover {
+            color: var(--navy-mid);
+            text-decoration: none;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+
+            gap: 26px;
         }
 
         .nav-links a {
-            color: #E8EEF5;
-
             font-size: 14px;
-            font-weight: 450;
+            font-weight: 500;
 
-            text-decoration: none;
+            color: var(--secondary);
         }
 
         .nav-links a:hover {
-            color: var(--white);
+            color: var(--navy);
+            text-decoration: none;
         }
 
 
-        /* =========================================================
-           INTRO
-        ========================================================= */
+        /* =====================================================
+           3. PROFILE / INTRODUCTION
+        ===================================================== */
 
-        .intro-background {
-            background-color: var(--light-bg);
+        .profile-section {
+            display: grid;
+            grid-template-columns: 180px minmax(0, 1fr);
+
+            gap: 44px;
+            align-items: start;
+
+            padding-top: 70px;
+            padding-bottom: 58px;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 220px;
+
+            object-fit: cover;
+            object-position: center;
+
+            border-radius: 3px;
+            border: 1px solid var(--border);
+        }
+
+        .profile-info h1 {
+            margin: 0 0 5px 0;
+
+            font-size: 38px;
+            font-weight: 700;
+
+            line-height: 1.2;
+            letter-spacing: -0.9px;
+
+            color: var(--navy);
+        }
+
+        .profile-position {
+            margin: 0;
+
+            font-size: 17px;
+            font-weight: 500;
+
+            color: var(--secondary);
+        }
+
+        .profile-university {
+            margin: 1px 0 0;
+
+            font-size: 16px;
+            color: var(--secondary);
+        }
+
+        .profile-contact {
+            margin-top: 13px;
+            font-size: 14px;
+        }
+
+        .profile-description {
+            margin-top: 24px;
+
+            max-width: 650px;
+
+            font-size: 15px;
+            line-height: 1.75;
+        }
+
+        .profile-description p {
+            margin: 0 0 13px;
+        }
+
+        .research-fields {
+            margin-top: 19px;
+
+            font-size: 14px;
+            line-height: 1.65;
+
+            color: var(--secondary);
+        }
+
+        .research-fields strong {
+            color: var(--navy);
+            font-weight: 650;
+        }
+
+        .profile-links {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 22px;
+
+            margin-top: 21px;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           4. SECTION HEADINGS
+        ===================================================== */
+
+        .section-block {
+            padding-top: 50px;
+            padding-bottom: 54px;
+
+            border-top: 1px solid var(--border);
+            scroll-margin-top: 85px;
+        }
+
+        .section-title {
+            margin: 0 0 30px;
+
+            font-size: 26px;
+            font-weight: 700;
+
+            letter-spacing: -0.5px;
+
+            color: var(--navy);
+        }
+
+        .subsection-title {
+            margin: 35px 0 22px;
+
+            padding-bottom: 9px;
+
+            font-size: 18px;
+            font-weight: 650;
+
+            color: var(--navy);
 
             border-bottom: 1px solid var(--border);
         }
 
-        .intro {
-            max-width: var(--max-width);
-            margin: 0 auto;
-
-            padding:
-                85px
-                28px
-                80px
-                28px;
-
-            display: grid;
-
-            grid-template-columns:
-                minmax(0, 1fr)
-                220px;
-
-            gap: 70px;
-
-            align-items: center;
-        }
-
-        .intro h1 {
-            margin: 0 0 8px 0;
-
-            font-size: 46px;
-            line-height: 1.15;
-
-            letter-spacing: -1.3px;
-
-            color: var(--navy);
-        }
-
-        .position {
-            margin: 0 0 24px 0;
-
-            font-size: 19px;
-            color: var(--navy-soft);
-
-            font-weight: 500;
-        }
-
-        .intro-text {
-            max-width: 650px;
-
-            font-size: 16.5px;
-
-            margin-bottom: 0;
-        }
-
-        .intro-text strong {
-            color: var(--navy);
-            font-weight: 600;
-        }
-
-        .profile-photo {
-            width: 210px;
-            height: 210px;
-
-            object-fit: cover;
-
-            border-radius: 4px;
-
-            border: 1px solid #CBD4DE;
-
-            background-color: #E4E9EF;
-        }
-
-
-        /* =========================================================
-           PROFILE LINKS
-        ========================================================= */
-
-        .intro-links {
-            display: flex;
-            flex-wrap: wrap;
-
-            gap: 10px;
-
-            margin-top: 30px;
-        }
-
-        .intro-links a {
-            display: inline-block;
-
-            padding: 7px 14px;
-
-            border: 1px solid var(--navy-light);
-            border-radius: 3px;
-
-            font-size: 14px;
-            font-weight: 550;
-
-            color: var(--navy-light);
-            background-color: transparent;
-
-            text-decoration: none;
-
-            transition:
-                background-color 0.15s ease,
-                color 0.15s ease;
-        }
-
-        .intro-links a:hover {
-            background-color: var(--navy);
-            color: var(--white);
-        }
-
-
-        /* =========================================================
-           SECTIONS
-        ========================================================= */
-
-        section {
-            padding-top: 70px;
-            padding-bottom: 70px;
-        }
-
-        section + section {
-            border-top: 1px solid var(--border);
-        }
-
-        section h2 {
+        .subsection-title:first-of-type {
             margin-top: 0;
-            margin-bottom: 40px;
-
-            font-size: 28px;
-
-            color: var(--navy);
-
-            letter-spacing: -0.5px;
         }
 
-        section h2::after {
-            content: "";
 
-            display: block;
-
-            width: 42px;
-            height: 3px;
-
-            margin-top: 11px;
-
-            background-color: var(--navy-light);
-        }
-
-        section h3 {
-            margin-top: 42px;
-            margin-bottom: 25px;
-
-            font-size: 18px;
-
-            color: var(--navy);
-
-            font-weight: 650;
-        }
-
-        /* =========================================================
-           Research  Interests
-        ========================================================= */
-
-        #interests p {
-            max-width: 820px;
-            margin: 0;
-            font-size: 15.5px;
-            line-height: 1.7;
-            color: var(--text);
-        }
-
-        /* =========================================================
-           RESEARCH
-        ========================================================= */
+        /* =====================================================
+           5. RESEARCH - WORKING PAPERS
+        ===================================================== */
 
         .paper {
-            margin-bottom: 42px;
+            padding-left: 17px;
 
-            padding-left: 18px;
+            margin-bottom: 37px;
 
-            border-left: 3px solid #D4DEE8;
+            border-left: 2px solid var(--paper-border);
+
+            transition:
+                border-color 0.2s ease,
+                background-color 0.2s ease;
         }
 
         .paper:hover {
-            border-left-color: var(--navy-light);
+            border-left-color: var(--navy-mid);
         }
 
         .paper-title {
-            margin-bottom: 4px;
+            margin: 0 0 5px;
 
             font-size: 18px;
             font-weight: 650;
 
+            line-height: 1.45;
+
             color: var(--navy);
         }
 
-        .paper-status {
-            margin-bottom: 7px;
-
-            font-size: 13px;
-
-            color: var(--navy-soft);
-
-            text-transform: uppercase;
-
-            letter-spacing: 0.5px;
-
-            font-weight: 600;
-        }
-
         .paper-authors {
-            margin-bottom: 9px;
-
-            font-size: 14.5px;
-
-            color: var(--gray);
-        }
-
-        .paper-description {
-            max-width: 820px;
-
-            margin-top: 8px;
-            margin-bottom: 12px;
+            margin-bottom: 5px;
 
             font-size: 14px;
-            line-height: 1.55;
-            color: #46515D;
+            color: var(--secondary);
         }
-        
-        .paper-presented {
-            margin-top: 4px;
+
+        .paper-status {
             margin-bottom: 12px;
-            
+
             font-size: 12.5px;
-            line-height: 1.5;
-            
-            color: #78838E;
+            font-weight: 500;
+
+            color: var(--muted);
         }
-        
-        .paper-links {
-            display: flex;
-            flex-wrap: wrap;
-
-            gap: 16px;
-
-            font-size: 14px;
-        }
-
-        /* =========================================================
-           PERSON LINKS
-        ========================================================= */
 
         .person-link {
             color: inherit;
@@ -391,146 +342,296 @@
         }
 
         .person-link:hover {
-            color: var(--navy-light);
+            color: var(--navy-mid);
             text-decoration: underline;
         }
 
 
-        /* =========================================================
-               EXPERIENCE
-            ========================================================= */
+        /* =====================================================
+           6. ABSTRACT & PAPER LINKS
+        ===================================================== */
 
-        .experience-item {
+        .paper-controls {
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+
+            gap: 10px 21px;
+
+            margin-top: 13px;
+            margin-bottom: 13px;
+        }
+
+        .abstract-toggle {
+            flex: 0 0 auto;
+        }
+
+        .abstract-toggle summary {
+            display: list-item;
+            list-style: none;
+
+            font-size: 13.5px;
+            font-weight: 600;
+
+            color: var(--navy-mid);
+
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .abstract-toggle summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .abstract-toggle summary::after {
+            content: "+";
+
+            display: inline-block;
+            margin-left: 6px;
+
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .abstract-toggle[open] summary::after {
+            content: "−";
+        }
+
+        .abstract-toggle summary:hover {
+            color: var(--navy);
+            text-decoration: underline;
+        }
+
+        .abstract-toggle[open] {
+            flex-basis: 100%;
+        }
+
+        .abstract-content {
+            max-width: 800px;
+
+            padding: 12px 0 3px;
+
+            font-size: 14px;
+            line-height: 1.7;
+
+            color: #46515D;
+        }
+
+        .abstract-content p {
+            margin: 0 0 9px;
+        }
+
+        .paper-downloads {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 21px;
+        }
+
+        .paper-downloads a {
+            font-size: 13.5px;
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           7. PRESENTATIONS / AWARDS
+        ===================================================== */
+
+        .paper-meta {
+            max-width: 800px;
+
+            margin-top: 12px;
+
+            font-size: 12.5px;
+            line-height: 1.65;
+
+            color: var(--muted);
+        }
+
+        .paper-meta p {
+            margin: 3px 0;
+        }
+
+        .paper-meta strong {
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+
+        /* =====================================================
+           8. WORK IN PROGRESS
+        ===================================================== */
+
+        .wip-item {
             margin-bottom: 24px;
         }
-        
-        #experience h3 {
-            margin-bottom: 14px;
-            padding-bottom: 8px;
 
-            border-bottom: 1px solid #E3E8EE;
-        }
-        
-        .experience-title {
+        .wip-title {
+            margin-bottom: 3px;
+
             font-size: 16px;
             font-weight: 650;
+
+            color: var(--navy);
+        }
+
+        .wip-authors {
+            font-size: 14px;
+            color: var(--secondary);
+        }
+
+
+        /* =====================================================
+           9. EDUCATION
+        ===================================================== */
+
+        .education-item {
+            margin-bottom: 23px;
+
+            display: flex;
+            justify-content: space-between;
+
+            gap: 24px;
+        }
+
+        .education-degree {
+            font-size: 15.5px;
+            font-weight: 600;
+
+            color: var(--navy);
+        }
+
+        .education-school {
+            margin-top: 2px;
+
+            font-size: 14px;
+            color: var(--secondary);
+        }
+
+        .education-date {
+            font-size: 13.5px;
+
+            color: var(--muted);
+
+            white-space: nowrap;
+        }
+
+
+        /* =====================================================
+           10. EXPERIENCE
+        ===================================================== */
+
+        .experience-item {
+            margin-bottom: 26px;
+        }
+
+        .experience-title {
+            font-size: 15.5px;
+            font-weight: 600;
+
             color: var(--navy);
         }
 
         .experience-info {
-            margin-top: 3px;
+            margin-top: 2px;
 
             font-size: 13.5px;
-            line-height: 1.5;
 
-            color: var(--gray);
+            color: var(--muted);
         }
 
         .experience-description {
-            margin-top: 6px;
+            max-width: 800px;
 
-            max-width: 820px;
+            margin-top: 7px;
 
             font-size: 14px;
-            line-height: 1.6;
+            line-height: 1.65;
 
-            color: #4f5963;
-        }
-
-        /* =========================================================
-           CONTACT
-        ========================================================= */
-
-        .contact-grid {
-            display: grid;
-
-            grid-template-columns: 120px 1fr;
-
-            row-gap: 15px;
-
-            max-width: 700px;
-        }
-
-        .contact-label {
-            color: var(--navy);
-
-            font-weight: 650;
+            color: #4F5963;
         }
 
 
-        /* =========================================================
-           FOOTER
-        ========================================================= */
+        /* =====================================================
+           11. FOOTER
+        ===================================================== */
 
         footer {
-            background-color: var(--navy);
+            border-top: 1px solid var(--border);
 
-            color: #BFCBDA;
+            padding: 28px 0 40px;
 
-            font-size: 13px;
+            font-size: 12.5px;
+            color: var(--muted);
         }
 
-        .footer-container {
-            max-width: var(--max-width);
-            margin: 0 auto;
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
 
-            padding: 30px 28px;
+            gap: 10px;
         }
 
 
-        /* =========================================================
-           MOBILE
-        ========================================================= */
+        /* =====================================================
+           12. MOBILE
+        ===================================================== */
 
-        @media (max-width: 750px) {
+        @media (max-width: 700px) {
 
             .nav-container {
                 flex-direction: column;
-
                 align-items: flex-start;
 
-                gap: 12px;
+                gap: 10px;
             }
 
             .nav-links {
-                gap: 18px;
-
-                flex-wrap: wrap;
+                gap: 17px;
             }
 
-            .intro {
+            .profile-section {
                 grid-template-columns: 1fr;
 
-                gap: 35px;
+                gap: 25px;
 
-                padding-top: 55px;
-                padding-bottom: 55px;
-            }
-
-            .intro h1 {
-                font-size: 38px;
+                padding-top: 40px;
+                padding-bottom: 45px;
             }
 
             .profile-photo {
-                grid-row: 1;
-
-                width: 175px;
-                height: 175px;
+                width: 155px;
+                height: 190px;
             }
 
-            section {
-                padding-top: 55px;
-                padding-bottom: 55px;
+            .profile-info h1 {
+                font-size: 33px;
             }
 
-            .contact-grid {
-                grid-template-columns: 1fr;
+            .section-block {
+                padding-top: 40px;
+                padding-bottom: 42px;
 
-                row-gap: 4px;
+                scroll-margin-top: 120px;
             }
 
-            .contact-label {
-                margin-top: 12px;
+            .section-title {
+                font-size: 24px;
+            }
+
+            .paper-title {
+                font-size: 17px;
+            }
+
+            .education-item {
+                flex-direction: column;
+                gap: 3px;
+            }
+
+            .education-date {
+                white-space: normal;
             }
 
         }
@@ -539,174 +640,170 @@
 </head>
 
 
-
 <body>
 
 
-<!-- =========================================================
+<!-- =====================================================
      NAVIGATION
-========================================================= -->
+===================================================== -->
 
-<nav>
+<header class="site-header">
 
-    <div class="nav-container">
+    <nav class="nav-container">
 
-        <div class="nav-name">
+        <a class="nav-name" href="#about">
             Daehee Kim
-        </div>
+        </a>
 
         <div class="nav-links">
 
-            <a href="#about">
-                About
-            </a>
-            
-            <a href="#interests">
-                Research Interests
-            </a>
-            
-            <a href="#research">
-                Research
-            </a>
+            <a href="#research">Research</a>
 
-            <a href="#experience">
-                Experience
-            </a>
+            <a href="#education">Education</a>
 
-            <a href="#contact">
-                Contact
+            <a href="#experience">Experience</a>
+
+            <a href="cv_september_2026.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+                CV
             </a>
 
         </div>
 
-    </div>
+    </nav>
 
-</nav>
-
-
-
-<!-- =========================================================
-     INTRO
-========================================================= -->
-
-<div
-    class="intro-background"
-    id="about"
->
-
-    <div class="intro">
-
-        <div>
-
-            <h1>
-                Daehee Kim
-            </h1>
-
-            <p class="position">
-                Master's Student in Economics
-            </p>
+</header>
 
 
-            <p class="intro-text">
-
-                I am a master's student in Economics at
-                <strong>Sogang University</strong>.
-
-                My research interests lie in
-                <strong>Urban Economics</strong>,
-                <strong>Labor Economics</strong>,
-                with a particular interest in how workers and local economies respond to policy and economic changes across space.
-                I am also interested in
-                and
-                <strong> Applied Microeconometrics</strong>
-                for credible empirical identification.
-
-            </p>
-
-
-            <div class="intro-links">
-
-                <a
-                    href="cv_september_2026.pdf"
-                    target="_blank"
-                >
-                    CV
-                </a>
-
-
-
-
-                <a
-                    href="https://github.com/daeheekimecon"
-                    target="_blank"
-                >
-                    GitHub
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div>
-
-            <img
-                src="Aug_2026.png"
-                alt="Daehee Kim"
-                class="profile-photo"
-            >
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =========================================================
-     Research Interests
-========================================================= -->
-    
 <main class="container">
 
-<section id="interests">
 
-    <h2>Research Interests</h2>
+<!-- =====================================================
+     PROFILE / ABOUT
+===================================================== -->
 
-    <p>
-        Urban Economics·Labor Economics·Applied Microeconometrics
-    </p>
+<section class="profile-section" id="about">
+
+    <div>
+
+        <img
+            src="Aug_2026.png"
+            alt="Portrait of Daehee Kim"
+            class="profile-photo"
+        >
+
+    </div>
+
+
+    <div class="profile-info">
+
+        <h1>Daehee Kim</h1>
+
+        <p class="profile-position">
+            Master's Student in Economics
+        </p>
+
+        <p class="profile-university">
+            Sogang University
+        </p>
+
+        <div class="profile-contact">
+
+            <a href="mailto:daeheekim@sogang.ac.kr">
+                daeheekim@sogang.ac.kr
+            </a>
+
+        </div>
+
+
+        <div class="profile-description">
+
+            <p>
+                I am a master's student in Economics at
+                Sogang University.
+            </p>
+
+            <p>
+                My research interests center on how policy
+                and economic changes shape spatial decisions
+                and local economic outcomes, particularly in
+                urban and labor markets.
+
+                I am also interested in empirical identification
+                and sensitivity analysis in applied microeconomic
+                research.
+            </p>
+
+        </div>
+
+
+        <div class="research-fields">
+
+            <strong>Research Interests:</strong>
+
+            Urban Economics ·
+            Labor Economics ·
+            Applied Microeconometrics
+
+        </div>
+
+
+        <div class="profile-links">
+
+            <a href="cv_september_2026.pdf"
+               target="_blank"
+               rel="noopener noreferrer">
+                CV
+            </a>
+
+            <a href="https://github.com/daeheekimecon"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
-    
-<!-- =========================================================
+
+
+<!-- =====================================================
      RESEARCH
-========================================================= -->
+===================================================== -->
 
-<section id="research">
+<section class="section-block" id="research">
 
-    <h2>
+    <h2 class="section-title">
         Research
     </h2>
 
 
-    <h3>
+    <h3 class="subsection-title">
         Working Papers
     </h3>
 
 
-    <!-- =========================
-         PAPER 1
-    ========================== -->
 
-    <div class="paper">
+    <!-- =================================================
+         PAPER 1: FIVE-DAY WORKWEEK
+    ================================================== -->
 
-        <div class="paper-title">
+    <article class="paper">
 
-            The Five-Day Workweek
-            and Spatial Labor Supply: Evidence from South Korea
+        <h4 class="paper-title">
 
+            The Five-Day Workweek and Spatial Labor Supply:
+            Evidence from South Korea
+
+        </h4>
+
+
+        <div class="paper-authors">
+            Daehee Kim
         </div>
 
 
@@ -715,254 +812,415 @@
         </div>
 
 
+        <!-- ABSTRACT / DRAFT / SLIDES -->
+
+        <div class="paper-controls">
+
+            <details class="abstract-toggle">
+
+                <summary>Abstract</summary>
+
+                <div class="abstract-content">
+
+                    <p>
+                        This paper studies whether working-time
+                        regulation reshapes the spatial allocation
+                        of labor by reducing commuting intensity.
+
+                        I exploit the staggered introduction of the
+                        Five-Day Workweek in South Korea, which
+                        lowered commuting frequency from six to
+                        five workdays per week.
+
+                        Using individual-level panel data and an
+                        intention-to-treat exposure measure based
+                        on statutory eligibility, I show that
+                        short-tenure Seoul workers become more
+                        likely to reside in Gyeonggi after legal
+                        eligibility begins.
+
+                        These responses are heterogeneous across
+                        workers and concentrated on the
+                        Seoul–Gyeonggi residential margin.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <div class="paper-downloads">
+
+                <a href="papers/draft_sep_2026.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Draft
+                </a>
+
+                <a href="slides/slides_daeheekim_fiveday_workweek.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Slides
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRESENTATIONS AND AWARDS -->
+
+        <div class="paper-meta">
+
+            <p>
+                <strong>Presented at:</strong>
+                KER International Conference
+                (Jeju, June 2026);
+                The 2nd Sogang Global Symposium on the
+                Frontiers of Economics
+                (Seoul, August 2026).
+            </p>
+
+            <p>
+                <strong>Award:</strong>
+                DB Finance Economic Contest (2026).
+            </p>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =================================================
+         PAPER 2: FAS REPLICATION
+    ================================================== -->
+
+    <article class="paper">
+
+        <h4 class="paper-title">
+
+            Historical Instruments and Exclusion Restrictions:
+            A Replication Study of Roche (2020)
+
+        </h4>
+
+
         <div class="paper-authors">
-            Daehee Kim (Solo Author)
-        </div>
 
+            Daehee Kim,
 
-        <p class="paper-description">
+            <a class="person-link"
+               href="https://sites.google.com/site/sungwonleewebpage"
+               target="_blank"
+               rel="noopener noreferrer">
+                Sungwon Lee
+            </a>,
 
-            This paper studies whether working-time regulation reshapes the
-            spatial allocation of labor by reducing commuting intensity. I exploit
-            the staggered introduction of the Five-Day Workweek in South Korea, which lowered commuting frequency from six to five workdays per
-            week. Using individual-level panel data and an intention-to-treat exposure measure based on statutory eligibility, I show that short-tenure
-            Seoul workers become more likely to reside in Gyeonggi after legal eligibility begins. These responses are heterogeneous across workers and
-            concentrated on the Seoul–Gyeonggi residential margin.
-
-        </p>
-
-        <div class="paper-presented">
-        Presented at: KER International Conference (Jeju, June 2026); The 2nd Sogang Global Symposium on the Frontiers of Economics (Seoul, August 2026).
-        Award: DB Finance Economic Contest award in 2026
-        </div>
-        
-        <div class="paper-links">
-
-            <a
-                href="papers/draft_sep_2026.pdf"
-                target="_blank"
-            >
-                Draft
-            </a>
-
-
-            <a
-                href="slides/slides_daeheekim_fiveday_workweek.pdf"
-                target="_blank"
-            >
-                Slides
-            </a>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- =========================
-         PAPER 2
-    ========================== -->
-
-    <div class="paper">
-
-        <div class="paper-title">
-
-            Historical Instruments and Exclusion Restrictions: A Replication Study of Roche(2020)
+            Jiho Yeom
 
         </div>
 
 
         <div class="paper-status">
-            Working Paper (Under Review)
+            Under Review
         </div>
 
 
-        <div class="paper-authors">
-            Daehee Kim,
-            <a
-                class="person-link"
-                href="https://sites.google.com/site/sungwonleewebpage?pli=1&authuser=0"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Sungwon Lee
-            </a>,
-            Jiho Yeom
+        <!-- ABSTRACT / DRAFT / SLIDES -->
+
+        <div class="paper-controls">
+
+            <details class="abstract-toggle">
+
+                <summary>Abstract</summary>
+
+                <div class="abstract-content">
+
+                    <p>
+                        This paper conducts narrow and wide
+                        replications of Roche (2020), which uses
+                        historical instruments to estimate causal
+                        effects, and evaluates the validity of
+                        the exclusion restrictions for the instruments.
+
+                        We rely on the framework of Masten and
+                        Poirier (2021) and estimate the falsification
+                        frontier and falsification adaptive set.
+
+                        We find that the baseline model, which
+                        imposes exact exclusion on both instruments,
+                        is falsified, and that the original sign
+                        conclusion of Roche (2020) is not preserved
+                        over all minimally non-falsified relaxations
+                        of the exclusion restrictions.
+
+                        However, it is maintained over a large
+                        portion of the relaxations.
+
+                        The recovery of the sign conclusion depends
+                        on which instrument is maintained as valid.
+
+                        In our preferred specification, the
+                        estimated effect is positive and similar
+                        in magnitude to that in Roche (2020).
+
+                        In doing so, we illustrate how sensitivity
+                        analysis of the exclusion restriction can
+                        be conducted, including how the robustness
+                        of a conclusion depends on which instrument
+                        is maintained as valid.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <div class="paper-downloads">
+
+                <a href="papers/Historical_IV.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Draft
+                </a>
+
+                <a href="slides/slides_FAS.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Slides
+                </a>
+
+            </div>
+
         </div>
 
-
-        <p class="paper-description">
-
-            This paper conducts narrow and wide replications of Roche (2020), which uses
-    historical instruments to estimate causal effects, and evaluates the validity of the
-    exclusion restrictions for the instruments. We rely on the framework of Masten and
-    Poirier (2021) and estimate the falsification frontier and falsification adaptive set.
-    We find that the baseline model, which imposes exact exclusion on both instruments,
-    is falsified, and that the original sign conclusion of Roche (2020) is not preserved
-    over all minimally non-falsified relaxations of the exclusion restrictions. However,
-    it is maintained over a large portion of the relaxations. The recovery of the sign
-    conclusion depends on which instrument is maintained as valid. In our preferred
-    specification, the estimated effect is positive and similar in magnitude to that in
-    Roche (2020). In doing so, we illustrate how sensitivity analysis of the exclusion
-    restriction can be conducted, including how the robustness of a conclusion depends
-    on which instrument is maintained as valid.
-        </p>
-
-
-        <div class="paper-links">
-
-            <a
-                href="papers/Historical_IV.pdf"
-                target="_blank"
-            >
-                Draft
-            </a>
-            
-            <a
-                href="slides/slides_FAS.pdf"
-                target="_blank"
-            >
-                Slides
-            </a>
-            
-        </div>
-
-    </div>
+    </article>
 
 
 
-    <!-- =========================
+    <!-- =================================================
          WORK IN PROGRESS
-    ========================== -->
+    ================================================== -->
 
-    <h3>
+    <h3 class="subsection-title">
         Work in Progress
     </h3>
 
 
-    <div class="paper">
+    <!-- WIP 1 -->
 
-        <div class="paper-title">
+    <div class="wip-item">
 
-            Urban-Rural Wage Gap and Inequality
-
+        <div class="wip-title">
+            Urban–Rural Wage Gap and Inequality
         </div>
 
+        <div class="wip-authors">
 
-        <div class="paper-status">
-            Work in Progress
-        </div>
-
-        <div class="paper-authors">
             Daehee Kim,
-            <a
-                class="person-link"
-                href="https://sites.google.com/site/sungwonleewebpage?pli=1&authuser=0"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
+
+            <a class="person-link"
+               href="https://sites.google.com/site/sungwonleewebpage"
+               target="_blank"
+               rel="noopener noreferrer">
                 Sungwon Lee
             </a>,
+
             Yongrok Kim
+
         </div>
 
     </div>
 
-    <div class="paper">
 
-        <div class="paper-title">
+    <!-- WIP 2 -->
 
+    <div class="wip-item">
+
+        <div class="wip-title">
             Commercial Gentrification and Granularity
-
         </div>
 
+        <div class="wip-authors">
 
-        <div class="paper-status">
-            Work in Progress
-        </div>
+            Daehee Kim,
+            Hyeonuk Shin,
+            Suhyeon Lee
 
-        <div class="paper-authors">
-            Daehee Kim, Hyeonuk Shin, Suhyeon Lee
         </div>
 
     </div>
-
 
 </section>
 
 
-<!-- =========================================================
-     Experience
-========================================================= -->
-<section id="experience">
 
-    <h2>Experience</h2>
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section class="section-block" id="education">
+
+    <h2 class="section-title">
+        Education
+    </h2>
 
 
-    <!-- =========================
+    <!-- MASTER'S -->
+
+    <div class="education-item">
+
+        <div>
+
+            <div class="education-degree">
+                M.A. in Economics
+            </div>
+
+            <div class="education-school">
+                Sogang University
+            </div>
+
+        </div>
+
+        <div class="education-date">
+            Expected 2027
+        </div>
+
+    </div>
+
+
+    <!-- BACHELOR'S -->
+
+    <div class="education-item">
+
+        <div>
+
+            <div class="education-degree">
+                B.A. in Economics
+            </div>
+
+            <div class="education-degree">
+                B.A. in Politics, Economics and Philosophy
+            </div>
+
+            <div class="education-school">
+                Sogang University
+            </div>
+
+        </div>
+
+        <div class="education-date">
+            2026
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section class="section-block" id="experience">
+
+    <h2 class="section-title">
+        Experience
+    </h2>
+
+
+
+    <!-- =================================================
          RESEARCH ASSISTANT
-    ========================== -->
+    ================================================== -->
 
-    <h3>Research Assistant</h3>
+    <h3 class="subsection-title">
+        Research Assistant
+    </h3>
+
+
+    <!-- RA 1 -->
 
     <div class="experience-item">
 
         <div class="experience-title">
+
             Research Assistant to
-            <a
-                class="person-link"
-                href="https://hyeseonshin.com"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
+
+            <a class="person-link"
+               href="https://hyeseonshin.com"
+               target="_blank"
+               rel="noopener noreferrer">
                 Prof. Hyeseon Shin
             </a>
+
         </div>
+
 
         <div class="experience-info">
-            Sogang University, Fall 2025 – Present
+            Sogang University · Fall 2025–Present
         </div>
 
+
         <div class="experience-description">
-            - Built harmonized microdata pipelines across multiple national labor force surveys
-            and estimated agriculture–non-agriculture sectoral transition matrices.
+
+            Built harmonized microdata pipelines across
+            multiple national labor force surveys and
+            estimated agriculture–non-agriculture
+            sectoral transition matrices.
+
         </div>
 
     </div>
 
+
+    <!-- RA 2 -->
 
     <div class="experience-item">
 
         <div class="experience-title">
+
             Research Assistant to
-            <a
-                class="person-link"
-                href="https://sites.google.com/site/jinwonk97/"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
+
+            <a class="person-link"
+               href="https://sites.google.com/site/jinwonk97/"
+               target="_blank"
+               rel="noopener noreferrer">
                 Prof. Jinwon Kim
             </a>
+
         </div>
+
 
         <div class="experience-info">
-            Sogang University, Spring 2025
+            Sogang University · Spring 2025
         </div>
 
+
         <div class="experience-description">
-           - Used housing rental transaction data to estimate rent-to-deposit conversion rates
-        in the Korean housing market.
+
+            Analyzed housing rental transaction data
+            to estimate the implicit conversion rate
+            between housing deposits and monthly rents.
+
         </div>
 
     </div>
 
 
 
-    <!-- =========================
+    <!-- =================================================
          TEACHING ASSISTANT
-    ========================== -->
+    ================================================== -->
 
-    <h3>Teaching Assistant</h3>
+    <h3 class="subsection-title">
+        Teaching Assistant
+    </h3>
+
+
+    <!-- TA 1 -->
 
     <div class="experience-item">
 
@@ -971,11 +1229,13 @@
         </div>
 
         <div class="experience-info">
-            Sogang University, Fall 2026
+            Sogang University · Fall 2026
         </div>
 
     </div>
 
+
+    <!-- TA 2 -->
 
     <div class="experience-item">
 
@@ -984,61 +1244,8 @@
         </div>
 
         <div class="experience-info">
-            Sogang University, Fall 2026
+            Sogang University · Fall 2026
         </div>
-
-    </div>
-
-
-</section>
-
-
-<!-- =========================================================
-     CONTACT
-========================================================= -->
-
-<section id="contact">
-
-    <h2>
-        Contact
-    </h2>
-
-
-    <div class="contact-grid">
-
-
-        <div class="contact-label">
-            Email
-        </div>
-
-        <div>
-
-            <a
-                href="mailto:daeheekim@sogang.ac.kr"
-            >
-                daeheekim@sogang.ac.kr
-            </a>
-
-        </div>
-
-
-
-
-        <div class="contact-label">
-            GitHub
-        </div>
-
-        <div>
-
-            <a
-                href="https://github.com/daeheekimecon"
-                target="_blank"
-            >
-                github.com/daeheekimecon
-            </a>
-
-        </div>
-
 
     </div>
 
@@ -1049,19 +1256,33 @@
 
 
 
-<!-- =========================================================
+<!-- =====================================================
      FOOTER
-========================================================= -->
+===================================================== -->
 
 <footer>
 
-    <div class="footer-container">
+    <div class="container footer-inner">
 
-        © 2026 Daehee Kim
+        <span>
+            © 2026 Daehee Kim
+        </span>
 
-        <br>
+        <span>
 
-        Last updated September 2026.
+            <a href="mailto:daeheekim@sogang.ac.kr">
+                Email
+            </a>
+
+            &nbsp;·&nbsp;
+
+            <a href="https://github.com/daeheekimecon"
+               target="_blank"
+               rel="noopener noreferrer">
+                GitHub
+            </a>
+
+        </span>
 
     </div>
 
@@ -1069,5 +1290,4 @@
 
 
 </body>
-
 </html>
