@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Daehee Kim - Master's Student in Economics at Sogang University. Research in Urban Economics, Labor Economics, and Applied Microeconometrics.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>Daehee Kim | Economics</title>
     <style>
 
@@ -29,7 +32,7 @@ body {
     margin: 0;
     background: var(--white);
     color: var(--text);
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: "Source Sans 3", Arial, sans-serif;
     font-size: 14px;
     line-height: 1.55;
 }
@@ -300,21 +303,32 @@ footer { border-top: 1px solid var(--border); padding: 25px 0 35px; font-size: 1
 
 .main-about p {
     font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 10px;
+    line-height: 1.65;
+    color: #30343A;
+}
+
+/* Emphasized research statement */
+.main-about .about-lead {
+    font-weight: 600;
+    color: #243B53;
+}
+
+/* Secondary methodological interest */
+.main-about .about-methods {
+    color: #596572;
 }
 
 /* SECTION HEADINGS */
 .section-title {
-    font-size: 23px;
-    margin-bottom: 22px;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--navy);
 }
 
 .subsection-title {
-    font-size: 16px;
-    margin-top: 28px;
-    margin-bottom: 17px;
-    padding-bottom: 7px;
+    font-size: 15.5px;
+    font-weight: 600;
+    color: #34495E;
 }
 
 /* WORKING PAPERS */
@@ -324,16 +338,27 @@ footer { border-top: 1px solid var(--border); padding: 25px 0 35px; font-size: 1
 }
 
 .paper-title {
-    font-size: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #243B53;
+    letter-spacing: 0;
 }
 
-.paper-authors {
-    font-size: 13px;
+.paper:hover .paper-title {
+    color: var(--navy-mid);
+}
+
+.paper-authors,
+.wip-authors {
+    font-size: 13.5px;
+    font-weight: 400;
+    color: #596572;
 }
 
 .paper-status {
     font-size: 12px;
-    margin-bottom: 8px;
+    color: #74808B;
 }
 
 /* ABSTRACT */
@@ -353,10 +378,20 @@ footer { border-top: 1px solid var(--border); padding: 25px 0 35px; font-size: 1
 
 .wip-title {
     font-size: 15px;
+    font-weight: 600;
+    color: #243B53;
 }
 
 .wip-authors {
     font-size: 13px;
+}
+
+/* Links */
+.abstract-toggle summary,
+.paper-downloads a {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--navy-mid);
 }
 
 /* EXPERIENCE */
@@ -431,25 +466,29 @@ footer { border-top: 1px solid var(--border); padding: 25px 0 35px; font-size: 1
 
     <section class="main-about">
 
-        <p>
+    <p>
+        <span class="about-lead">
             My research interests lie in applied microeconomics,
             particularly urban and labor economics.
-            I am interested in how workers and local economies
-            respond to policy and economic changes, and why
-            these responses differ across individuals and places.
-            My research focuses on spatial aspects of economic
-            adjustment, including residential location,
-            labor-market outcomes, and differences across
-            local economies.
-        </p>
+        </span>
 
-        <p>
-            I am also interested in applied econometrics,
-            particularly how identifying assumptions shape
-            empirical conclusions.
-        </p>
+        I am interested in how workers and local economies
+        respond to policy and economic changes, and why
+        these responses differ across individuals and places.
 
-    </section>
+        My research focuses on spatial aspects of economic
+        adjustment, including residential location,
+        labor-market outcomes, and differences across
+        local economies.
+    </p>
+
+    <p class="about-methods">
+        I am also interested in applied econometrics,
+        particularly how identifying assumptions shape
+        empirical conclusions.
+    </p>
+
+</section>
 
 <section class="section-block" id="research">
 
@@ -593,7 +632,7 @@ footer { border-top: 1px solid var(--border); padding: 25px 0 35px; font-size: 1
                 Sungwon Lee
             </a>,
 
-            Jiho Yeom
+            and Jiho Yeom
 
         </div>
 
@@ -703,7 +742,7 @@ footer { border-top: 1px solid var(--border); padding: 25px 0 35px; font-size: 1
                 Sungwon Lee
             </a>,
 
-            Yongrok Kim
+            and Yongrok Kim
 
         </div>
 
@@ -722,7 +761,7 @@ footer { border-top: 1px solid var(--border); padding: 25px 0 35px; font-size: 1
 
             Daehee Kim,
             Hyeonuk Shin,
-            Suhyeon Lee
+            and Suhyeon Lee
 
         </div>
 
