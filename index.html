@@ -8,8 +8,7 @@
     <style>
 
 /* =========================================================
-   DAEHEE KIM — ACADEMIC HOMEPAGE
-   Sidebar + research-first layout
+   DAEHEE KIM — HOMEPAGE
 ========================================================= */
 :root {
     --navy: #142D4E;
@@ -30,9 +29,9 @@ body {
     margin: 0;
     background: var(--white);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    line-height: 1.7;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.55;
 }
 a {
     color: var(--navy-mid);
@@ -263,6 +262,125 @@ footer { border-top: 1px solid var(--border); padding: 25px 0 35px; font-size: 1
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+    
+/* =========================================================
+   COMPACT ACADEMIC TYPOGRAPHY
+========================================================= */
+
+/* SIDEBAR */
+.sidebar-name {
+    font-size: 26px;
+}
+
+.sidebar-position,
+.sidebar-university {
+    font-size: 13.5px;
+}
+
+.sidebar-links {
+    font-size: 13px;
+    gap: 4px;
+    margin-top: 16px;
+}
+
+.sidebar-fields {
+    margin-top: 24px;
+}
+
+.sidebar-fields-title,
+.sidebar-fields-list {
+    font-size: 13px;
+}
+
+/* ABOUT */
+.main-about {
+    padding-bottom: 28px;
+}
+
+.main-about p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* SECTION HEADINGS */
+.section-title {
+    font-size: 23px;
+    margin-bottom: 22px;
+}
+
+.subsection-title {
+    font-size: 16px;
+    margin-top: 28px;
+    margin-bottom: 17px;
+    padding-bottom: 7px;
+}
+
+/* WORKING PAPERS */
+.paper {
+    margin-bottom: 27px;
+    padding-left: 14px;
+}
+
+.paper-title {
+    font-size: 16px;
+}
+
+.paper-authors {
+    font-size: 13px;
+}
+
+.paper-status {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+/* ABSTRACT */
+.abstract-content {
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+.paper-meta {
+    font-size: 12px;
+}
+
+/* WORK IN PROGRESS */
+.wip-item {
+    margin-bottom: 18px;
+}
+
+.wip-title {
+    font-size: 15px;
+}
+
+.wip-authors {
+    font-size: 13px;
+}
+
+/* EXPERIENCE */
+.experience-item {
+    margin-bottom: 20px;
+}
+
+.experience-title {
+    font-size: 14.5px;
+}
+
+.experience-info {
+    font-size: 12.5px;
+}
+
+.experience-description {
+    font-size: 13.5px;
+    line-height: 1.6;
+}
+
+/* SECTION SPACING */
+.section-block {
+    padding-top: 34px;
+    padding-bottom: 34px;
 }
     </style>
 </head>
