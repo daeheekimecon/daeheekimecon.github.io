@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daehee Kim - Master's Student in Economics at Sogang University. Research in Urban Economics, Labor Economics, and Applied Microeconometrics.">
+    <title>Daehee Kim | Economics</title>
+    <style>
+
+/* =========================================================
+   DAEHEE KIM — ACADEMIC HOMEPAGE
+   Sidebar + research-first layout
+========================================================= */
+:root {
+    --navy: #142D4E;
+    --navy-mid: #365B7D;
+    --navy-light: #6685A3;
+    --text: #30343A;
+    --secondary: #606B76;
+    --muted: #79838D;
+    --border: #E2E7EC;
+    --paper-border: #D5DEE7;
+    --white: #FFFFFF;
+    --page-width: 1160px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    margin: 0;
+    background: var(--white);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+}
+a {
+    color: var(--navy-mid);
+    text-decoration: none;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+a:hover { color: var(--navy); text-decoration: underline; }
+a:focus-visible, summary:focus-visible {
+    outline: 2px solid var(--navy-mid);
+    outline-offset: 4px;
+}
+
+/* HEADER */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid var(--border);
+}
+.nav-container {
+    max-width: var(--page-width);
+    margin: auto;
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.nav-name {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+    color: var(--navy);
+}
+.nav-name:hover { color: var(--navy-mid); text-decoration: none; }
+.nav-links { display: flex; align-items: center; flex-wrap: wrap; gap: 26px; }
+.nav-links a { font-size: 13.5px; font-weight: 500; color: var(--secondary); }
+.nav-links a:hover { color: var(--navy); text-decoration: none; }
+
+/* TWO-COLUMN LAYOUT */
+.page-layout {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 55px 28px 78px;
+    display: grid;
+    grid-template-columns: 245px minmax(0, 1fr);
+    column-gap: 74px;
+    align-items: start;
+}
+.sidebar {
+    position: sticky;
+    top: 90px; /* space for the sticky top navigation */
+    align-self: start;
+    min-width: 0;
+    scroll-margin-top: 90px;
+}
+.sidebar-photo {
+    display: block;
+    width: 165px;
+    height: 205px;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    margin: 0 0 19px;
+}
+.sidebar-name {
+    margin: 0 0 5px;
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+    line-height: 1.25;
+    color: var(--navy);
+}
+.sidebar-position { margin: 0; font-size: 14px; font-weight: 500; line-height: 1.5; }
+.sidebar-university { margin: 3px 0 0; font-size: 14px; color: var(--secondary); }
+.sidebar-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    margin-top: 20px;
+    font-size: 13.5px;
+}
+.sidebar-links a { overflow-wrap: anywhere; }
+.sidebar-fields { margin-top: 28px; padding-top: 16px; border-top: 1px solid var(--border); }
+.sidebar-fields-title { margin: 0 0 8px; font-size: 13.5px; font-weight: 650; color: var(--navy); }
+.sidebar-fields-list { margin: 0; font-size: 13.5px; color: var(--secondary); line-height: 1.85; }
+
+/* RIGHT COLUMN */
+.main-content { min-width: 0; }
+.main-about { padding: 0 0 39px; scroll-margin-top: 95px; }
+.main-about h2 {
+    margin: 0 0 14px;
+    color: var(--navy);
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+.main-about p { max-width: 780px; margin: 0 0 11px; font-size: 15px; line-height: 1.8; }
+.section-block {
+    border-top: 1px solid var(--border);
+    padding: 39px 0 45px;
+    scroll-margin-top: 90px;
+}
+.section-title {
+    margin: 0 0 25px;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--navy);
+}
+.subsection-title {
+    margin: 34px 0 22px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    font-size: 17px;
+    font-weight: 650;
+    color: var(--navy);
+}
+.section-title + .subsection-title { margin-top: 0; }
+
+/* WORKING PAPERS */
+.paper {
+    padding-left: 16px;
+    margin-bottom: 34px;
+    border-left: 2px solid var(--paper-border);
+    transition: border-color 0.2s ease;
+}
+.paper:hover { border-left-color: var(--navy-mid); }
+.paper-title {
+    margin: 0 0 5px;
+    font-size: 17.5px;
+    font-weight: 650;
+    line-height: 1.45;
+    color: var(--navy);
+    transition: color 0.2s ease;
+}
+.paper:hover .paper-title { color: var(--navy-mid); }
+.paper-authors { margin-bottom: 4px; font-size: 14px; color: var(--secondary); }
+.paper-status { margin-bottom: 9px; font-size: 12.5px; color: var(--muted); }
+.person-link { color: inherit; text-decoration: none; }
+.person-link:hover { color: var(--navy-mid); text-decoration: underline; }
+
+/* ABSTRACT / DRAFT / SLIDES */
+.paper-controls {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin: 11px 0;
+}
+.abstract-toggle { flex: 0 0 auto; min-width: 0; }
+.abstract-toggle summary {
+    display: list-item;
+    list-style: none;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--navy-mid);
+    user-select: none;
+}
+.abstract-toggle summary::-webkit-details-marker { display: none; }
+.abstract-toggle summary::after { content: "+"; margin-left: 7px; font-weight: 500; }
+.abstract-toggle[open] summary::after { content: "−"; }
+.abstract-toggle summary:hover { color: var(--navy); text-decoration: underline; }
+.abstract-toggle[open] { flex-basis: 100%; }
+.abstract-content { padding: 12px 0 4px; max-width: 750px; font-size: 14px; line-height: 1.7; color: #46515D; }
+.abstract-content p { margin: 0 0 10px; }
+.paper-downloads { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
+.paper-downloads a { font-size: 13.5px; font-weight: 600; }
+.paper-meta { max-width: 750px; margin-top: 12px; font-size: 12.5px; line-height: 1.65; color: var(--muted); }
+.paper-meta p { margin: 4px 0; }
+.paper-meta strong { font-weight: 600; color: var(--secondary); }
+
+/* WORK IN PROGRESS */
+.wip-item { margin-bottom: 24px; }
+.wip-title { margin-bottom: 3px; font-size: 16px; font-weight: 650; line-height: 1.5; color: var(--navy); }
+.wip-authors { font-size: 14px; color: var(--secondary); }
+
+/* EDUCATION */
+.education-item { margin-bottom: 24px; display: flex; justify-content: space-between; gap: 24px; }
+.education-degree { color: var(--navy); font-size: 15.5px; font-weight: 600; }
+.education-school { margin-top: 2px; font-size: 14px; color: var(--secondary); }
+.education-date { font-size: 13.5px; color: var(--muted); white-space: nowrap; }
+
+/* EXPERIENCE */
+.experience-item { margin-bottom: 26px; }
+.experience-title { font-size: 15.5px; font-weight: 600; color: var(--navy); }
+.experience-info { margin-top: 2px; font-size: 13.5px; color: var(--muted); }
+.experience-description { margin-top: 7px; max-width: 750px; font-size: 14px; line-height: 1.65; color: #4F5963; }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--border); padding: 25px 0 35px; font-size: 12.5px; color: var(--muted); }
+.footer-inner {
+    max-width: var(--page-width);
+    margin: 0 auto;
+    padding: 0 28px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* TABLET & MOBILE: SIDEBAR IS NO LONGER STICKY */
+@media (max-width: 850px) {
+    .page-layout { grid-template-columns: 1fr; gap: 36px; padding: 36px 28px 56px; }
+    .sidebar { position: static; padding-bottom: 32px; border-bottom: 1px solid var(--border); }
+    .sidebar-photo { width: 150px; height: 185px; }
+    .sidebar-fields { margin-top: 22px; }
+    .main-about { padding-bottom: 32px; }
+    .section-block { padding: 33px 0 39px; }
+}
+@media (max-width: 540px) {
+    .nav-container { flex-direction: column; align-items: flex-start; padding-top: 12px; padding-bottom: 12px; gap: 8px; }
+    .nav-links { gap: 17px; }
+    .nav-links a { font-size: 13px; }
+    .page-layout { padding-left: 20px; padding-right: 20px; }
+    .main-about, .section-block { scroll-margin-top: 116px; }
+    .main-about h2, .section-title { font-size: 23px; }
+    .paper-title { font-size: 17px; }
+    .education-item { flex-direction: column; gap: 3px; }
+    .education-date { white-space: normal; }
+}
+@media (max-height: 620px) and (min-width: 851px) {
+    /* Prevent a very tall sticky sidebar from obscuring its own links. */
+    .sidebar { position: static; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: 0.01ms !important; }
+}
+    </style>
+</head>
+<body>
+
+<!-- TOP NAVIGATION -->
+<header class="site-header">
+    <nav class="nav-container" aria-label="Main navigation">
+        <a class="nav-name" href="#about">Daehee Kim</a>
+        <div class="nav-links">
+            <a href="#research">Research</a>
+            <a href="#education">Education</a>
+            <a href="#experience">Experience</a>
+        </div>
+    </nav>
+</header>
+
+<!-- DESKTOP: STICKY SIDEBAR + SCROLLING CONTENT -->
+<div class="page-layout">
+
+    <!-- LEFT PROFILE COLUMN -->
+    <aside class="sidebar" id="about" aria-label="Profile">
+        <img class="sidebar-photo" src="Aug_2026.png" alt="Portrait of Daehee Kim">
+        <h1 class="sidebar-name">Daehee Kim</h1>
+        <p class="sidebar-position">Master's Student in Economics</p>
+        <p class="sidebar-university">Sogang University</p>
+
+        <div class="sidebar-links">
+            <a href="mailto:daeheekim@sogang.ac.kr">daeheekim@sogang.ac.kr</a>
+            <a href="cv_september_2026.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a>
+            <a href="https://github.com/daeheekimecon" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+
+        <div class="sidebar-fields">
+            <div class="sidebar-fields-title">Research Interests</div>
+            <p class="sidebar-fields-list">
+                Urban Economics<br>
+                Labor Economics<br>
+                Applied Microeconometrics
+            </p>
+        </div>
+    </aside>
+
+    <!-- RIGHT RESEARCH / EDUCATION / EXPERIENCE COLUMN -->
+    <main class="main-content">
+        <section class="main-about" aria-labelledby="about-heading">
+            <h2 id="about-heading">About</h2>
+            <p>I am a master's student in Economics at Sogang University.</p>
+            <p>My research interests center on how policy and economic changes shape spatial decisions and local economic outcomes, particularly in urban and labor markets. I am also interested in empirical identification and sensitivity analysis in applied microeconomic research.</p>
+        </section>
+
+<section class="section-block" id="research">
+
+    <h2 class="section-title">
+        Research
+    </h2>
+
+
+    <h3 class="subsection-title">
+        Working Papers
+    </h3>
+
+
+
+    <!-- =================================================
+         PAPER 1: FIVE-DAY WORKWEEK
+    ================================================== -->
+
+    <article class="paper">
+
+        <h4 class="paper-title">
+
+            The Five-Day Workweek and Spatial Labor Supply:
+            Evidence from South Korea
+
+        </h4>
+
+
+        <div class="paper-authors">
+            Daehee Kim
+        </div>
+
+
+        <div class="paper-status">
+            Working Paper
+        </div>
+
+
+        <!-- ABSTRACT / DRAFT / SLIDES -->
+
+        <div class="paper-controls">
+
+            <details class="abstract-toggle">
+
+                <summary>Abstract</summary>
+
+                <div class="abstract-content">
+
+                    <p>
+                        This paper studies whether working-time
+                        regulation reshapes the spatial allocation
+                        of labor by reducing commuting intensity.
+
+                        I exploit the staggered introduction of the
+                        Five-Day Workweek in South Korea, which
+                        lowered commuting frequency from six to
+                        five workdays per week.
+
+                        Using individual-level panel data and an
+                        intention-to-treat exposure measure based
+                        on statutory eligibility, I show that
+                        short-tenure Seoul workers become more
+                        likely to reside in Gyeonggi after legal
+                        eligibility begins.
+
+                        These responses are heterogeneous across
+                        workers and concentrated on the
+                        Seoul–Gyeonggi residential margin.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <div class="paper-downloads">
+
+                <a href="papers/draft_sep_2026.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Draft
+                </a>
+
+                <a href="slides/slides_daeheekim_fiveday_workweek.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Slides
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRESENTATIONS AND AWARDS -->
+
+        <div class="paper-meta">
+
+            <p>
+                <strong>Presented at:</strong>
+                KER International Conference
+                (Jeju, June 2026);
+                The 2nd Sogang Global Symposium on the
+                Frontiers of Economics
+                (Seoul, August 2026).
+            </p>
+
+            <p>
+                <strong>Award:</strong>
+                DB Finance Economic Contest (2026).
+            </p>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =================================================
+         PAPER 2: FAS REPLICATION
+    ================================================== -->
+
+    <article class="paper">
+
+        <h4 class="paper-title">
+
+            Historical Instruments and Exclusion Restrictions:
+            A Replication Study of Roche (2020)
+
+        </h4>
+
+
+        <div class="paper-authors">
+
+            Daehee Kim,
+
+            <a class="person-link"
+               href="https://sites.google.com/site/sungwonleewebpage"
+               target="_blank"
+               rel="noopener noreferrer">
+                Sungwon Lee
+            </a>,
+
+            Jiho Yeom
+
+        </div>
+
+
+        <div class="paper-status">
+            Under Review
+        </div>
+
+
+        <!-- ABSTRACT / DRAFT / SLIDES -->
+
+        <div class="paper-controls">
+
+            <details class="abstract-toggle">
+
+                <summary>Abstract</summary>
+
+                <div class="abstract-content">
+
+                    <p>
+                        This paper conducts narrow and wide
+                        replications of Roche (2020), which uses
+                        historical instruments to estimate causal
+                        effects, and evaluates the validity of
+                        the exclusion restrictions for the instruments.
+
+                        We rely on the framework of Masten and
+                        Poirier (2021) and estimate the falsification
+                        frontier and falsification adaptive set.
+
+                        We find that the baseline model, which
+                        imposes exact exclusion on both instruments,
+                        is falsified, and that the original sign
+                        conclusion of Roche (2020) is not preserved
+                        over all minimally non-falsified relaxations
+                        of the exclusion restrictions.
+
+                        However, it is maintained over a large
+                        portion of the relaxations.
+
+                        The recovery of the sign conclusion depends
+                        on which instrument is maintained as valid.
+
+                        In our preferred specification, the
+                        estimated effect is positive and similar
+                        in magnitude to that in Roche (2020).
+
+                        In doing so, we illustrate how sensitivity
+                        analysis of the exclusion restriction can
+                        be conducted, including how the robustness
+                        of a conclusion depends on which instrument
+                        is maintained as valid.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <div class="paper-downloads">
+
+                <a href="papers/Historical_IV.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Draft
+                </a>
+
+                <a href="slides/slides_FAS.pdf"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Slides
+                </a>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =================================================
+         WORK IN PROGRESS
+    ================================================== -->
+
+    <h3 class="subsection-title">
+        Work in Progress
+    </h3>
+
+
+    <!-- WIP 1 -->
+
+    <div class="wip-item">
+
+        <div class="wip-title">
+            Urban–Rural Wage Gap and Inequality
+        </div>
+
+        <div class="wip-authors">
+
+            Daehee Kim,
+
+            <a class="person-link"
+               href="https://sites.google.com/site/sungwonleewebpage"
+               target="_blank"
+               rel="noopener noreferrer">
+                Sungwon Lee
+            </a>,
+
+            Yongrok Kim
+
+        </div>
+
+    </div>
+
+
+    <!-- WIP 2 -->
+
+    <div class="wip-item">
+
+        <div class="wip-title">
+            Commercial Gentrification and Granularity
+        </div>
+
+        <div class="wip-authors">
+
+            Daehee Kim,
+            Hyeonuk Shin,
+            Suhyeon Lee
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section class="section-block" id="education">
+
+    <h2 class="section-title">
+        Education
+    </h2>
+
+
+    <!-- MASTER'S -->
+
+    <div class="education-item">
+
+        <div>
+
+            <div class="education-degree">
+                M.A. in Economics
+            </div>
+
+            <div class="education-school">
+                Sogang University
+            </div>
+
+        </div>
+
+        <div class="education-date">
+            Expected 2027
+        </div>
+
+    </div>
+
+
+    <!-- BACHELOR'S -->
+
+    <div class="education-item">
+
+        <div>
+
+            <div class="education-degree">
+                B.A. in Economics
+            </div>
+
+            <div class="education-degree">
+                B.A. in Politics, Economics and Philosophy
+            </div>
+
+            <div class="education-school">
+                Sogang University
+            </div>
+
+        </div>
+
+        <div class="education-date">
+            2026
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section class="section-block" id="experience">
+
+    <h2 class="section-title">
+        Experience
+    </h2>
+
+
+
+    <!-- =================================================
+         RESEARCH ASSISTANT
+    ================================================== -->
+
+    <h3 class="subsection-title">
+        Research Assistant
+    </h3>
+
+
+    <!-- RA 1 -->
+
+    <div class="experience-item">
+
+        <div class="experience-title">
+
+            Research Assistant to
+
+            <a class="person-link"
+               href="https://hyeseonshin.com"
+               target="_blank"
+               rel="noopener noreferrer">
+                Prof. Hyeseon Shin
+            </a>
+
+        </div>
+
+
+        <div class="experience-info">
+            Sogang University · Fall 2025–Present
+        </div>
+
+
+        <div class="experience-description">
+
+            Built harmonized microdata pipelines across
+            multiple national labor force surveys and
+            estimated agriculture–non-agriculture
+            sectoral transition matrices.
+
+        </div>
+
+    </div>
+
+
+    <!-- RA 2 -->
+
+    <div class="experience-item">
+
+        <div class="experience-title">
+
+            Research Assistant to
+
+            <a class="person-link"
+               href="https://sites.google.com/site/jinwonk97/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Prof. Jinwon Kim
+            </a>
+
+        </div>
+
+
+        <div class="experience-info">
+            Sogang University · Spring 2025
+        </div>
+
+
+        <div class="experience-description">
+
+            Analyzed housing rental transaction data
+            to estimate the implicit conversion rate
+            between housing deposits and monthly rents.
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         TEACHING ASSISTANT
+    ================================================== -->
+
+    <h3 class="subsection-title">
+        Teaching Assistant
+    </h3>
+
+
+    <!-- TA 1 -->
+
+    <div class="experience-item">
+
+        <div class="experience-title">
+            Microeconomics I
+        </div>
+
+        <div class="experience-info">
+            Sogang University · Fall 2026
+        </div>
+
+    </div>
+
+
+    <!-- TA 2 -->
+
+    <div class="experience-item">
+
+        <div class="experience-title">
+            Mathematical Methods for Economists
+        </div>
+
+        <div class="experience-info">
+            Sogang University · Fall 2026
+        </div>
+
+    </div>
+
+</section>
+    </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-inner">
+        <span>© 2026 Daehee Kim</span>
+        <span>
+            <a href="mailto:daeheekim@sogang.ac.kr">Email</a>
+            &nbsp;·&nbsp;
+            <a href="https://github.com/daeheekimecon" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </span>
+    </div>
+</footer>
+
+</body>
+</html>
