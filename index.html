@@ -447,33 +447,55 @@ footer { border-top: 1px solid var(--border); padding: 25px 0 35px; font-size: 1
 
 .paper-controls {
     display: grid;
-    grid-template-columns: 80px minmax(0, 1fr);
+    grid-template-columns: max-content minmax(0, 1fr);
     column-gap: 20px;
+    row-gap: 0;
     align-items: start;
 }
 
-/* Abstract occupies the full width when expanded */
+/* Reserve exactly the width of the Abstract label */
+.paper-controls::before {
+    content: "Abstract";
+    visibility: hidden;
+
+    grid-column: 1;
+    grid-row: 1;
+
+    font-size: 13.5px;
+    font-weight: 600;
+}
+
+/* Abstract toggle and expanded panel */
 .paper-controls .abstract-toggle {
     grid-column: 1 / -1;
     grid-row: 1;
+
     width: 100%;
+    min-width: 0;
 }
 
-/* Keep the Abstract label on the first row */
 .paper-controls .abstract-toggle summary {
+    display: inline-block;
     width: max-content;
+
+    font-size: 13.5px;
+    font-weight: 600;
 }
 
-/* Keep Draft and Slides next to Abstract */
+/* Draft and Slides stay on the first row */
 .paper-controls .paper-downloads {
     grid-column: 2;
     grid-row: 1;
-    align-self: start;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
     position: relative;
     z-index: 1;
 }
 
-/* Space between links and expanded abstract */
+/* Spacing before expanded abstract */
 .paper-controls .abstract-content {
     margin-top: 12px;
 }
