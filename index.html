@@ -441,6 +441,43 @@ footer { border-top: 1px solid var(--border); padding: 25px 0 35px; font-size: 1
 .abstract-content p:last-child {
     margin-bottom: 0;
 }
+/* =========================================================
+   ABSTRACT / DRAFT / SLIDES ALIGNMENT
+========================================================= */
+
+.paper-controls {
+    display: grid;
+    grid-template-columns: 80px minmax(0, 1fr);
+    column-gap: 20px;
+    align-items: start;
+}
+
+/* Abstract occupies the full width when expanded */
+.paper-controls .abstract-toggle {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 100%;
+}
+
+/* Keep the Abstract label on the first row */
+.paper-controls .abstract-toggle summary {
+    width: max-content;
+}
+
+/* Keep Draft and Slides next to Abstract */
+.paper-controls .paper-downloads {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    position: relative;
+    z-index: 1;
+}
+
+/* Space between links and expanded abstract */
+.paper-controls .abstract-content {
+    margin-top: 12px;
+}
+        
     </style>
 </head>
 <body>
